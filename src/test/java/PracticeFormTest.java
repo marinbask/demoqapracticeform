@@ -15,7 +15,6 @@ public class PracticeFormTest {
                 Configuration.browserSize = "1920x1080";
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
-        Configuration.holdBrowserOpen = true;
         Configuration.timeout = 7000;
     }
 
@@ -46,7 +45,7 @@ public class PracticeFormTest {
         $("[for='hobbies-checkbox-2']").click();
         $("[for='hobbies-checkbox-3']").click();
         //добавляем картинку
-        $("#uploadPicture").uploadFile(new File("src/test/picture/1.png"));
+        $("#uploadPicture").uploadFromClasspath("1.png");
         //вводим адрес
         $("#currentAddress").setValue("Somewhere street 33");
         $("#react-select-3-input").val("Haryana").pressEnter();
